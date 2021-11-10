@@ -7,15 +7,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+
 
 namespace contacts
 {
     public partial class Form1 : Form
     {
+        string photopath;
+        SqlCommand cmd = new SqlCommand();
+        SqlConnection con = new SqlConnection();
         public Form1()
         {
             InitializeComponent();
+            con.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ASUS\Desktop\contacts\contacts\contacts\contacts\Database1.mdf;Integrated Security=True";
         }
+        public void display()
+        {
+          
+            DataSet ds = new DataSet();
+            SqlDataAdapter adp = new SqlDataAdapter();
+            adp.SelectCommand = new SqlCommand();
+            adp.SelectCommand.Connection = con;
+            adp.SelectCommand.CommandText = photopath;
+            adp.Fill(ds, "Table");
+
+        }
+
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
