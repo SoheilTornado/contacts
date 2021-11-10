@@ -67,17 +67,74 @@ namespace contacts
 
         private void txtname_Enter(object sender, EventArgs e)
         {
-
+            if (txtname.Text == "Name")
+            {
+                txtname.Text = "";
+                txtname.ForeColor = Color.Black;
+            }
         }
 
         private void txtname_Leave(object sender, EventArgs e)
         {
-
+            if (txtname.Text == "")
+            {
+                txtname.Text = "Name";
+                txtname.ForeColor = Color.DimGray;
+            }
         }
 
-        private void txtname_TextCanged(object sender, EventArgs e)
+        private void txtfamily_Enter(object sender, EventArgs e)
         {
+            if (txtfamily.Text == "Family")
+            {
+                txtfamily.Text = "";
+                txtfamily.ForeColor = Color.Black;
+            }
+        }
 
+        private void txtfamily_Leave(object sender, EventArgs e)
+        {
+            if (txtfamily.Text == "")
+            {
+                txtfamily.Text = "Family";
+                txtfamily.ForeColor = Color.DimGray;
+            }
+        }
+
+        private void txtnumber_Enter(object sender, EventArgs e)
+        {
+            if (txtnumber.Text == "Number")
+            {
+                txtnumber.Text = "";
+                txtnumber.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtnumber_Leave(object sender, EventArgs e)
+        {
+            if (txtnumber.Text == "")
+            {
+                txtnumber.Text = "Number";
+                txtnumber.ForeColor = Color.DimGray;
+            }
+        }
+
+        private void txtaddres_Enter(object sender, EventArgs e)
+        {
+            if (txtaddres.Text == "Addres")
+            {
+                txtaddres.Text = "";
+                txtaddres.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtaddres_Leave(object sender, EventArgs e)
+        {
+            if (txtaddres.Text == "")
+            {
+                txtaddres.Text = "Addres";
+                txtaddres.ForeColor = Color.DimGray;
+            }
         }
     }
 }

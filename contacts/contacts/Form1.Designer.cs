@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtname = new System.Windows.Forms.TextBox();
             this.txtfamily = new System.Windows.Forms.TextBox();
@@ -41,15 +42,16 @@
             this.lblsearch = new System.Windows.Forms.Label();
             this.lblkeyword = new System.Windows.Forms.Label();
             this.comboBoxsearch = new System.Windows.Forms.ComboBox();
-            this.comboBoxcontains = new System.Windows.Forms.ComboBox();
             this.btnsearch = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Location = new System.Drawing.Point(218, 7);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 116);
@@ -65,8 +67,8 @@
             this.txtname.Size = new System.Drawing.Size(201, 22);
             this.txtname.TabIndex = 1;
             this.txtname.Text = "Name";
-            this.txtname.TextChanged += new System.EventHandler(this.txtname_TextCanged);
             this.txtname.Enter += new System.EventHandler(this.txtname_Enter);
+            this.txtname.Leave += new System.EventHandler(this.txtname_Leave);
             // 
             // txtfamily
             // 
@@ -76,6 +78,8 @@
             this.txtfamily.Size = new System.Drawing.Size(201, 22);
             this.txtfamily.TabIndex = 2;
             this.txtfamily.Text = "Family";
+            this.txtfamily.Enter += new System.EventHandler(this.txtfamily_Enter);
+            this.txtfamily.Leave += new System.EventHandler(this.txtfamily_Leave);
             // 
             // txtnumber
             // 
@@ -86,6 +90,8 @@
             this.txtnumber.Size = new System.Drawing.Size(201, 22);
             this.txtnumber.TabIndex = 3;
             this.txtnumber.Text = "Number";
+            this.txtnumber.Enter += new System.EventHandler(this.txtnumber_Enter);
+            this.txtnumber.Leave += new System.EventHandler(this.txtnumber_Leave);
             // 
             // txtaddres
             // 
@@ -96,6 +102,8 @@
             this.txtaddres.Size = new System.Drawing.Size(201, 70);
             this.txtaddres.TabIndex = 4;
             this.txtaddres.Text = "Addres";
+            this.txtaddres.Enter += new System.EventHandler(this.txtaddres_Enter);
+            this.txtaddres.Leave += new System.EventHandler(this.txtaddres_Leave);
             // 
             // btnbrowse
             // 
@@ -118,7 +126,7 @@
             // 
             // btnsave
             // 
-            this.btnsave.Location = new System.Drawing.Point(167, 167);
+            this.btnsave.Location = new System.Drawing.Point(181, 167);
             this.btnsave.Name = "btnsave";
             this.btnsave.Size = new System.Drawing.Size(133, 42);
             this.btnsave.TabIndex = 7;
@@ -173,14 +181,6 @@
             this.comboBoxsearch.Size = new System.Drawing.Size(132, 24);
             this.comboBoxsearch.TabIndex = 12;
             // 
-            // comboBoxcontains
-            // 
-            this.comboBoxcontains.FormattingEnabled = true;
-            this.comboBoxcontains.Location = new System.Drawing.Point(167, 322);
-            this.comboBoxcontains.Name = "comboBoxcontains";
-            this.comboBoxcontains.Size = new System.Drawing.Size(132, 24);
-            this.comboBoxcontains.TabIndex = 13;
-            // 
             // btnsearch
             // 
             this.btnsearch.Location = new System.Drawing.Point(76, 365);
@@ -199,14 +199,22 @@
             this.dataGridView1.Size = new System.Drawing.Size(309, 150);
             this.dataGridView1.TabIndex = 0;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(167, 322);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(132, 22);
+            this.textBox1.TabIndex = 15;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(326, 558);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnsearch);
-            this.Controls.Add(this.comboBoxcontains);
             this.Controls.Add(this.comboBoxsearch);
             this.Controls.Add(this.lblkeyword);
             this.Controls.Add(this.lblsearch);
@@ -220,8 +228,9 @@
             this.Controls.Add(this.txtfamily);
             this.Controls.Add(this.txtname);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "contact soheil";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -245,9 +254,9 @@
         private System.Windows.Forms.Label lblsearch;
         private System.Windows.Forms.Label lblkeyword;
         private System.Windows.Forms.ComboBox comboBoxsearch;
-        private System.Windows.Forms.ComboBox comboBoxcontains;
         private System.Windows.Forms.Button btnsearch;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
